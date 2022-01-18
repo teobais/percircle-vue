@@ -1,12 +1,26 @@
 {
-  "name": "percircle",
+  "name": "percircle-vue",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+  "description": "CSS percentage circle built with Vue.js.",
+  "main": "src/components/percircle.vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teobais/percircle-vue.git"
   },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "percentage",
+    "circle",
+    "ui"
+  ],
+  "author": "Teo Bais <thodoris.bais@gmail.com> (http://thodorisbais.nl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teobais/percircle-vue/issues"
+  },
+  "homepage": "https://github.com/teobais/percircle-vue#readme",
+
   "dependencies": {
     "core-js": "^3.6.5",
     "sass": "^1.47.0",
@@ -40,5 +54,10 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  }
 }
