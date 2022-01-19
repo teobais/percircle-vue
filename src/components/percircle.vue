@@ -387,7 +387,7 @@ export default {
   }
 
   .circle-bar {
-    stroke-width: 10;
+    stroke-width: 8;
   }
 }
 
