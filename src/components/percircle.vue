@@ -121,7 +121,7 @@ export default {
 
   computed: {
     fillerMax() {
-      return this.perclock || this.perdown ? 60 : 100;
+      return this.perclock ? 60 : this.perdown ? this.secs : 100;
     },
 
     fillerOffset() {
