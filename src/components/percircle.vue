@@ -394,4 +394,9 @@ export default {
 .perclock > span {
   font-size: 0.15em;
 }
+
+.perclock.animate .circle-bar,
+.perdown.animate .circle-bar {
+  transition: stroke-width 0.2s ease-in-out;
+}
 </style>
