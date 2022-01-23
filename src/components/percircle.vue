@@ -15,7 +15,7 @@
         class="filler-bar circle-bar"
         cx="60"
         cy="60"
-        r="54"
+        r="50"
         fill="none"
       />
 
@@ -23,7 +23,7 @@
         class="progress-bar circle-bar"
         cx="60"
         cy="60"
-        r="54"
+        r="50"
         fill="none"
         :stroke="progressBarColor"
         :pathLength="fillerMax"
@@ -360,6 +360,7 @@ export default {
     }
 
     .circle-bar {
+      r: 55;
       stroke-width: 5;
     }
   }
@@ -397,6 +398,6 @@ export default {
 
 .perclock.animate .circle-bar,
 .perdown.animate .circle-bar {
-  transition: stroke-width 0.2s ease-in-out;
+  transition: stroke-width 0.2s ease-in-out, r 0.2s ease-in-out;
 }
 </style>
