@@ -1,6 +1,6 @@
 {
   "name": "percircle-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CSS percentage circle built with Vue.js.",
   "main": "src/components/percircle.vue",
   "repository": {
