@@ -360,7 +360,7 @@ export default {
     }
 
     .circle-bar {
-      r: 55;
+      r: 52;
       stroke-width: 5;
     }
   }
