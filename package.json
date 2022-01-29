@@ -7,6 +7,12 @@
     "type": "git",
     "url": "git+https://github.com/teobais/percircle-vue.git"
   },
+  "contributors": [
+    {
+      "name": "Kevin Miller",
+      "url": "https://github.com/miller-kevin"
+    }
+  ],
   "keywords": [
     "vue",
     "vuejs",
