@@ -1,10 +1,16 @@
 <template>
   <div class="container">
     <div class="mb-5">
-      <h3 class="text-center">
-        Percircle (Custom colors and reactive percents)
-      </h3>
-      <pre>
+      <h3 class="text-center">Percircle (Custom colors and reactive percents)</h3>
+
+      <ssh-pre class="mb-4" language="html" copy-button @copied="onCopiedDoSomething" dark reactive>
+        <template #copy-button>
+          <span class="small text-white">{{ copyText }}</span>
+        </template>
+        &lt;percircle :percent="{{ percent }}" :displayTextAtZero="true" progressBarColor="#1B75BC"/&gt;
+      </ssh-pre>
+
+      <!-- <pre>
       <code> 
         { 
           percent: {{percent}},
@@ -12,20 +18,18 @@
           progressBarColor: "#1B75BC"
         } 
       </code>
-    </pre>
+    </pre> -->
       <percircle :percent="percent" progressBarColor="#1B75BC" />
       <div class="text-center mt-4">
         <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
-        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3">
-          Subtract 10
-        </b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
       </div>
     </div>
 
     <div class="mb-5">
       <h3 class="text-center">
-        Percircle (Text based, small size, dark background, uses same percent as
-        above but translates it to a letter grade)
+        Percircle (Text based, small size, dark background, uses same percent as above but translates it to a letter
+        grade)
       </h3>
       <pre>
       <code> 
@@ -43,16 +47,12 @@
       </div>
       <div class="text-center mt-4">
         <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
-        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3">
-          Subtract 10
-        </b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
       </div>
     </div>
 
     <div class="mb-5">
-      <h3 class="text-center">
-        Perdown (Countdown timer, big size, clicking resets it)
-      </h3>
+      <h3 class="text-center">Perdown (Countdown timer, big size, clicking resets it)</h3>
       <pre>
       <code> 
         class="big"
@@ -92,16 +92,10 @@
         } 
       </code>
     </pre>
-      <percircle
-        :percent="percent"
-        progressBarColor="#1B75BC"
-        animateOnScroll
-      />
+      <percircle :percent="percent" progressBarColor="#1B75BC" animateOnScroll />
       <div class="text-center mt-4">
         <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
-        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3">
-          Subtract 10
-        </b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
       </div>
     </div>
 
@@ -119,25 +113,26 @@
       <percircle :percent="percent" :animate="animate" />
       <div class="text-center mt-4">
         <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
-        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3">
-          Subtract 10
-        </b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import SshPre from 'simple-syntax-highlighter'
 import Percircle from './percircle.vue'
 export default {
   name: 'HelloWorld',
 
   components: {
     Percircle,
+    SshPre,
   },
 
   data() {
     return {
+      copyText: 'Copy',
       percent: 60,
       secs: 35,
       animate: false,
@@ -169,6 +164,13 @@ export default {
   methods: {
     add(amount) {
       this.percent += amount
+    },
+
+    onCopiedDoSomething() {
+      this.copyText = 'Copied!'
+      setTimeout(() => {
+        this.copyText = 'Copy'
+      }, 2000)
     },
   },
 }

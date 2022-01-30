@@ -3,6 +3,8 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
+import 'simple-syntax-highlighter/dist/sshpre.css'
+
 import {
   LayoutPlugin,
   NavbarPlugin,
