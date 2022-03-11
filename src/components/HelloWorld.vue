@@ -1,115 +1,84 @@
 <template>
-  <div class="hello">
-    <h3>Percircle (Custom colors and reactive percents)</h3>
-    <pre>
-      <code> 
-        { 
-          percent: {{percent}},
-          displayTextAtZero: true,
-          progressBarColor: "#1B75BC"
-        } 
-      </code>
-    </pre>
-    <percircle :percent="percent" progressBarColor="#1B75BC" />
-
-    <div class="buttons">
-      <button class="button" @click="add(10)">+10</button>
-      <button class="button" @click="add(-10)">-10</button>
+  <div class="container">
+    <div class="mb-5">
+      <h3 class="text-center">Percircle (Custom colors and reactive percents)</h3>
+      <SnippetSection class="mb-4">
+        &lt;percircle :percent="{{ percent }}" :displayTextAtZero="true" progressBarColor="#1B75BC"/&gt;
+      </SnippetSection>
+      <percircle :percent="percent" progressBarColor="#1B75BC" />
+      <div class="text-center mt-4">
+        <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
+      </div>
     </div>
 
-    <h3>
-      Percircle (Text based, small size, dark background, uses same percent as
-      above but translates it to a letter grade)
-    </h3>
-    <pre>
-      <code> 
-        class="small dark"
-
-        { 
-          percent: {{percent}},
-          displayTextAtZero: true,
-          text: {{letterGrade}}
-        } 
-      </code>
-    </pre>
-    <div class="dark-background">
-      <percircle class="small dark" :percent="percent" :text="letterGrade" />
+    <div class="mb-5">
+      <h3 class="text-center">
+        Percircle (Text based, small size, dark background, uses same percent as above but translates it to a letter
+        grade)
+      </h3>
+      <SnippetSection class="mb-4">
+        &lt;percircle :percent="{{ percent }}" :displayTextAtZero="true" text="{{ letterGrade }}"/&gt;
+      </SnippetSection>
+      <div class="dark-background">
+        <percircle class="small dark" :percent="percent" :text="letterGrade" />
+      </div>
+      <div class="text-center mt-4">
+        <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
+      </div>
     </div>
 
-    <div class="buttons">
-      <button class="button" @click="add(10)">+10</button>
-      <button class="button" @click="add(-10)">-10</button>
+    <div class="mb-5">
+      <h3 class="text-center">Perdown (Countdown timer, big size, clicking resets it)</h3>
+      <SnippetSection class="mb-4">
+        &lt;percircle :perdown="true" :secs="{{ secs }}" timeUpText="Done" :resetOnClick="true"/&gt;
+      </SnippetSection>
+      <percircle class="big" perdown :secs="secs" timeUpText="Done" />
     </div>
 
-    <h3>Perdown (Countdown timer, big size, clicking resets it)</h3>
-    <pre>
-      <code> 
-        class="big"
-
-        { 
-          perdown: true,
-          secs: {{secs}},
-          timeUpText: "Done",
-          resetOnClick: true
-        } 
-      </code>
-    </pre>
-    <percircle class="big" perdown :secs="secs" timeUpText="Done" />
-
-    <h3>Perclock (Clock)</h3>
-    <pre>
-      <code> 
-        { 
-          perclock: true
-        } 
-      </code>
-    </pre>
-    <percircle perclock />
-
-    <h3>Percircle (Animate on scroll)</h3>
-    <pre>
-      <code> 
-        { 
-          percent: {{percent}},
-          displayTextAtZero: true,
-          progressBarColor: "#1B75BC",
-          animateOnScroll: true
-        } 
-      </code>
-    </pre>
-    <percircle :percent="percent" progressBarColor="#1B75BC" animateOnScroll />
-
-    <div class="buttons">
-      <button class="button" @click="add(10)">+10</button>
-      <button class="button" @click="add(-10)">-10</button>
+    <div class="mb-5">
+      <h3 class="text-center">Perclock (Clock)</h3>
+      <SnippetSection class="mb-4"> &lt;percircle :perclock="true"/&gt; </SnippetSection>
+      <percircle perclock />
     </div>
 
-    <h3>Percircle (Animation off)</h3>
-    <pre>
-      <code> 
-        { 
-          percent: {{percent}},
-          displayTextAtZero: true,
-          animate: false
-        } 
-      </code>
-    </pre>
-    <percircle :percent="percent" :animate="animate" />
+    <div class="mb-5">
+      <h3 class="text-center">Percircle (Animate on scroll)</h3>
+      <SnippetSection class="mb-4">
+        &lt;percircle :percent="{{ percent }}" :displayTextAtZero="true" progressBarColor="#1B75BC"
+        :animateOnScroll="true"/&gt;
+      </SnippetSection>
+      <percircle :percent="percent" progressBarColor="#1B75BC" animateOnScroll />
+      <div class="text-center mt-4">
+        <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
+      </div>
+    </div>
 
-    <div class="buttons">
-      <button class="button" @click="add(10)">+10</button>
-      <button class="button" @click="add(-10)">-10</button>
+    <div class="mb-5">
+      <h3 class="text-center">Percircle (Animation off)</h3>
+      <SnippetSection class="mb-4">
+        &lt;percircle :percent="{{ percent }}" :displayTextAtZero="true" :animate="false"/&gt;
+      </SnippetSection>
+      <percircle :percent="percent" :animate="animate" />
+      <div class="text-center mt-4">
+        <b-button variant="outline-secondary" @click="add(10)">Add 10</b-button>
+        <b-button variant="outline-secondary" @click="add(-10)" class="ms-3"> Subtract 10 </b-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Percircle from "./percircle.vue";
+import Percircle from './percircle.vue'
+import SnippetSection from './SnippetSection.vue'
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
 
   components: {
     Percircle,
+    SnippetSection,
   },
 
   data() {
@@ -117,37 +86,37 @@ export default {
       percent: 60,
       secs: 35,
       animate: false,
-    };
+    }
   },
 
   computed: {
     letterGrade() {
       if (this.percent >= 90) {
-        return "A";
+        return 'A'
       }
 
       if (this.percent >= 80) {
-        return "B";
+        return 'B'
       }
 
       if (this.percent >= 70) {
-        return "C";
+        return 'C'
       }
 
       if (this.percent >= 60) {
-        return "D";
+        return 'D'
       }
 
-      return "F";
+      return 'F'
     },
   },
 
   methods: {
     add(amount) {
-      this.percent += amount;
+      this.percent += amount
     },
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
